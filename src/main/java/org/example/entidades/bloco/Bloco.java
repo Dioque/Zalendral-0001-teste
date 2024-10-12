@@ -1,4 +1,4 @@
-package org.example.bloco;
+package org.example.entidades.bloco;
 
 import java.awt.image.BufferedImage;
 

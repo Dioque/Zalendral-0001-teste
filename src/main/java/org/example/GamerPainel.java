@@ -1,8 +1,6 @@
 package org.example;
 
-import org.example.bloco.Bloco;
-import org.example.bloco.GerenciadoBloco;
-import org.example.entidades.JogadorJsonParaLeitura;
+import org.example.entidades.bloco.GerenciadoBloco;
 import org.example.entidades.Jogador;
 
 import javax.swing.JPanel;
@@ -85,7 +83,7 @@ public class GamerPainel extends JPanel implements Runnable{
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
-        gerenciadoBloco.pinta(g2);
+        gerenciadoBloco.desenhaMapa(g2);
         jogador.pinta(g2);
 
         g2.dispose();

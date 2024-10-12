@@ -17,7 +17,6 @@ public class ProcessoImagemJson {
     public Color[] colors;
 
     public ProcessoImagemJson(String path) {
-        // Caminho para o arquivo JSON
         String jsonPath = path;
         try {
             // Carregar o JSON e mapear para Map<String, Animation>
@@ -32,14 +31,17 @@ public class ProcessoImagemJson {
                 int[][] matrix = animation.getMatrix();
                 this.matrix = matrix;
 
-                Map<Integer, Color> colorMap = animation.getColorMap();
-                ArrayList<Color> nome = new ArrayList<>(colorMap.values());
+                if (animation.colors != null) {
+                    Map<Integer, Color> colorMap = animation.getColorMap();
+                    ArrayList<Color> nome = new ArrayList<>(colorMap.values());
 
-                Color[] colors = new Color[nome.size()];
-                for (int i = 0; i < colors.length; i++) {
-                    colors[i] = nome.get(i);
+                    Color[] colors = new Color[nome.size()];
+                    for (int i = 0; i < colors.length; i++) {
+                        colors[i] = nome.get(i);
+                    }
+                    this.colors = colors;
                 }
-                this.colors = colors;
+
             }
 
         } catch (IOException e) {

@@ -6,6 +6,9 @@ import org.example.ManipulaTeclas;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+import static org.example.camera.cameraX;
+import static org.example.camera.cameraY;
+
 public class Jogador extends Entidade {
     GamerPainel gamerPainel;
     ManipulaTeclas tecladoM;
@@ -20,8 +23,8 @@ public class Jogador extends Entidade {
     }
 
     public void valoresPadroes() {
-        posX = 100;
-        posY = 100;
+        posX = 800;
+        posY = 450;
         velocidade = 3;
         direcao = "abaixo";
     }
@@ -29,45 +32,54 @@ public class Jogador extends Entidade {
     public void getJogadorImage(){
         //System.out.println("Current working directory: " + System.getProperty("user.dir"));
 
-        desceParado = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescerParado.json");
-        desce1 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer1.json");
-        desce2 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer2.json");
-        desce3 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer3.json");
-        desce4 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer4.json");
-        desce5 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer5.json");
-        desce6 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer6.json");
-        desce7 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer7.json");
-        desce8 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer8.json");
+        // REAL        desceParado = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesceParado.json");
 
-        subiParado = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescerParado.json");
-        subi1 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer1.json");
-        subi2 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer2.json");
-        subi3 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer3.json");
-        subi4 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer4.json");
-        subi5 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer5.json");
-        subi6 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer6.json");
-        subi7 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer7.json");
-        subi8 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer8.json");
+        desceParado = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce1.json");
+        desce1 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce1.json");
+        desce2 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce2.json");
+        desce3 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce3.json");
+        desce4 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce4.json");
+        desce5 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce5.json");
+        desce6 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce6.json");
+        desce7 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce7.json");
+        desce8 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce8.json");
 
-        direitaParado = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescerParado.json");
-        direita1 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer1.json");
-        direita2 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer2.json");
-        direita3 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer3.json");
-        direita4 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer4.json");
-        direita5 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer5.json");
-        direita6 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer6.json");
-        direita7 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer7.json");
-        direita8 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer8.json");
+ //REAL       subiParado = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesceParado.json");
 
-        esquerdaParado = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescerParado.json");
-        esquerda1 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer1.json");
-        esquerda2 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer2.json");
-        esquerda3 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer3.json");
-        esquerda4 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer4.json");
-        esquerda5 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer5.json");
-        esquerda6 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer6.json");
-        esquerda7 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer7.json");
-        esquerda8 = gamerPainel.bufferedImage.bufferedImage("target/classes/org/example/JsonConfigSprit/JogadorSprit/Descer/JogadorDescer8.json");
+
+        subiParado = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce1.json");
+        subi1 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce1.json");
+        subi2 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce2.json");
+        subi3 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce3.json");
+        subi4 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce4.json");
+        subi5 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce5.json");
+        subi6 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce6.json");
+        subi7 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce7.json");
+        subi8 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce8.json");
+
+  //REAL      direitaParado = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesceParado.json");
+
+        direitaParado = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce1.json");
+        direita1 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce1.json");
+        direita2 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce2.json");
+        direita3 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce3.json");
+        direita4 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce4.json");
+        direita5 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce5.json");
+        direita6 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce6.json");
+        direita7 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce7.json");
+        direita8 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce8.json");
+
+   //REAL     esquerdaParado = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesceParado.json");
+
+        esquerdaParado = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce1.json");
+        esquerda1 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce1.json");
+        esquerda2 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce2.json");
+        esquerda3 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce3.json");
+        esquerda4 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce4.json");
+        esquerda5 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce5.json");
+        esquerda6 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce6.json");
+        esquerda7 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce7.json");
+        esquerda8 = gamerPainel.bufferedImage.bufferedImage("target/classes/JsonConfigSprit/JogadorSprit/Descer/JogadorDesce8.json");
 
     }
 
@@ -78,19 +90,27 @@ public class Jogador extends Entidade {
 
             if (tecladoM.acimaAtivado) {
                 direcao = "acima";
-                posY -= velocidade;
+                //posY -= velocidade;
+
+                cameraY -= velocidade;
             }
             if (tecladoM.abaixoAtivado) {
                 direcao = "abaixo";
-                posY += velocidade;
+               // posY += velocidade;
+
+                cameraY += velocidade;
             }
             if (tecladoM.direitaAtivado) {
                 direcao = "direita";
-                posX += velocidade;
+                //posX += velocidade;
+
+                cameraX += velocidade;
             }
             if (tecladoM.esquerdaAtivado) {
                 direcao = "esquerda";
-                posX -= velocidade;
+                //posX -= velocidade;
+
+                cameraX -= velocidade;
             }
 
             spriteContador++;

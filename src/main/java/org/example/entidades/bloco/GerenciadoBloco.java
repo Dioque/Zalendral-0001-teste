@@ -38,7 +38,7 @@ public class GerenciadoBloco {
     public void desenhaMapa(Graphics2D g2){
 
         JogadorJsonParaLeitura matrizJson = new JogadorJsonParaLeitura("target/classes/JsonConfigSprit/mapa/mapa1.json");
-        int matrizOtimizada = 1000;
+        int matrizOtimizada = 40;
         int tamanhoBloco = 48;
 
         int cordenadaXCamera;

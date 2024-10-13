@@ -1,6 +1,7 @@
 package org.example.entidades.bloco;
 
 import org.example.GamerPainel;
+import org.example.entidades.Jogador;
 import org.example.entidades.JogadorJsonParaLeitura;
 
 import java.awt.*;
@@ -33,20 +34,51 @@ public class GerenciadoBloco {
 
     }
 
+
     public void desenhaMapa(Graphics2D g2){
 
         JogadorJsonParaLeitura matrizJson = new JogadorJsonParaLeitura("target/classes/JsonConfigSprit/mapa/mapa1.json");
-
+        int matrizOtimizada = 1000;
         int tamanhoBloco = 48;
 
-        for (int y = 0; y < matrizJson.pixelArt.length; y++) {
-            for (int x = 0; x < matrizJson.pixelArt[y].length; x++) {
-                int cordIndex = matrizJson.pixelArt[y][x];
-                g2.drawImage(bloco[cordIndex].imagem, x*tamanhoBloco-cameraX, y*tamanhoBloco-cameraY, null);
+        int cordenadaXCamera;
+        int cordenadaYCamera;
+
+
+        int [][] matrizOtimizadaInterface = extraiCentralMatrix(matrizJson.pixelArt, matrizOtimizada);
+
+        for (int y = 0; y < matrizOtimizadaInterface.length; y++) {
+            for (int x = 0; x < matrizOtimizadaInterface[y].length; x++) {
+                cordenadaXCamera = x*tamanhoBloco-cameraX;
+                cordenadaYCamera = y*tamanhoBloco-cameraY;
+
+                int cordIndex = matrizOtimizadaInterface[y][x];
+                g2.drawImage(bloco[cordIndex].imagem, cordenadaXCamera, cordenadaYCamera, null);
+
             }
         }
-
-
-
     }
+
+    public static int [][] extraiCentralMatrix(int [][] matrix, int matrizOtimizada){
+
+        int matrixY = matrix.length;
+        int matrizX = matrix[0].length;
+
+        int centroMatrizY = matrixY / 2;
+        int centroMatrizX = matrizX / 2;
+
+        int inicioMatrizOtimizadaY = centroMatrizY - matrizOtimizada / 2;
+        int inicioMatrizOtimizadaX = centroMatrizX - matrizOtimizada / 2;
+
+        int [][] matrizOtimizadaInterface = new int[matrizOtimizada][matrizOtimizada];
+
+        for (int y = 0; y < matrizOtimizada; y++) {
+            for (int x = 0; x < matrizOtimizada; x++) {
+                matrizOtimizadaInterface[y][x] = matrix[inicioMatrizOtimizadaY + y][inicioMatrizOtimizadaX + x];
+            }
+        }
+        return matrizOtimizadaInterface;
+    }
+
+
 }

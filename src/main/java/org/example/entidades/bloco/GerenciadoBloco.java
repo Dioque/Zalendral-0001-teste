@@ -38,7 +38,7 @@ public class GerenciadoBloco {
     public void desenhaMapa(Graphics2D g2){
 
         JogadorJsonParaLeitura matrizJson = new JogadorJsonParaLeitura("target/classes/JsonConfigSprit/mapa/mapa1.json");
-        int matrizOtimizada = 20;
+        int matrizOtimizada = 50;
         int tamanhoBloco = 48;
 
         int cordenadaXCamera;
@@ -61,11 +61,9 @@ public class GerenciadoBloco {
                 cordenadaXCamera = x*tamanhoBloco+limitetelaMinX;
                 cordenadaYCamera = y*tamanhoBloco+limitetelaminY;
 
-                System.out.println(limitetelaMinX);
-
 
                 int cordIndex = matrizOtimizadaInterface[y][x];
-                g2.drawImage(bloco[cordIndex].imagem, cordenadaXCamera, cordenadaYCamera, null);
+                g2.drawImage(bloco[cordIndex].imagem, cordenadaXCamera-tamanhoBloco, cordenadaYCamera-tamanhoBloco, null);
 
             }
         }

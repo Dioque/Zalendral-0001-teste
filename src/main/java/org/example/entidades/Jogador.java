@@ -92,25 +92,25 @@ public class Jogador extends Entidade {
                 direcao = "acima";
                 //posY -= velocidade;
 
-                cameraY -= velocidade;
+                cameraY += velocidade;
             }
             if (tecladoM.abaixoAtivado) {
                 direcao = "abaixo";
                // posY += velocidade;
 
-                cameraY += velocidade;
+                cameraY -= velocidade;
             }
             if (tecladoM.direitaAtivado) {
                 direcao = "direita";
                 //posX += velocidade;
 
-                cameraX += velocidade;
+                cameraX -= velocidade;
             }
             if (tecladoM.esquerdaAtivado) {
                 direcao = "esquerda";
                 //posX -= velocidade;
 
-                cameraX -= velocidade;
+                cameraX += velocidade;
             }
 
             spriteContador++;

@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.entidades.bloco.GerenciadoBloco;
 import org.example.entidades.Jogador;
+import org.example.mapa.DesenhaMapa;
 
 import javax.swing.JPanel;
 import java.awt.*;
@@ -17,7 +17,7 @@ public class GamerPainel extends JPanel implements Runnable{
 
     ManipulaTeclas tecladoM = new ManipulaTeclas();
 
-    GerenciadoBloco gerenciadoBloco;
+    DesenhaMapa desenhaMapa;
     Jogador jogador;
     public bufferedImage bufferedImage;
     public GamerPainel(Dimension screenSize){
@@ -33,7 +33,7 @@ public class GamerPainel extends JPanel implements Runnable{
     private void inicializar() {
         bufferedImage = new bufferedImage(this);
 
-        gerenciadoBloco = new GerenciadoBloco(this);
+        desenhaMapa = new DesenhaMapa(this);
         jogador = new Jogador(this, tecladoM);
 
     }
@@ -83,7 +83,7 @@ public class GamerPainel extends JPanel implements Runnable{
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
 
-        gerenciadoBloco.desenhaMapa(g2);
+        desenhaMapa.desenhaMapa(g2);
         jogador.pinta(g2);
 
         g2.dispose();

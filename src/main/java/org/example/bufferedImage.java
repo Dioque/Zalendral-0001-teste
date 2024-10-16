@@ -1,7 +1,6 @@
 package org.example;
 
 import org.example.entidades.JogadorJsonParaLeitura;
-import org.example.entidades.bloco.GerenciadoBloco;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
